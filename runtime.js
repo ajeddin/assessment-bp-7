@@ -47,6 +47,42 @@ const extraLargeArray = getSizedArray(100000);
 
 // Try it with first function
 perf.start();                     // Starts timer
+doublerAppend(tinyArray);
+let results1Append = perf.stop();  // Stops timer and save time results
+
+
+// Try it with second function
+perf.start();
+doublerInsert(tinyArray);
+let results1Insert = perf.stop();
+perf.start();                     // Starts timer
+doublerAppend(smallArray);
+let results2Append = perf.stop();  // Stops timer and save time results
+
+
+// Try it with second function
+perf.start();
+doublerInsert(smallArray);
+let results2Insert = perf.stop();
+perf.start();                     // Starts timer
+doublerAppend(mediumArray);
+let results3Append = perf.stop();  // Stops timer and save time results
+
+
+// Try it with second function
+perf.start();
+doublerInsert(mediumArray);
+let results3Insert = perf.stop();
+perf.start();                     // Starts timer
+doublerAppend(largeArray);
+let results4Append = perf.stop();  // Stops timer and save time results
+
+
+// Try it with second function
+perf.start();
+doublerInsert(largeArray);
+let results4Insert = perf.stop();
+perf.start();                     // Starts timer
 doublerAppend(extraLargeArray);
 let resultsAppend = perf.stop();  // Stops timer and save time results
 
@@ -56,6 +92,22 @@ perf.start();
 doublerInsert(extraLargeArray);
 let resultsInsert = perf.stop();
 
+
+console.log('Results for the tinyArray');
+console.log("insert", results1Insert.preciseWords);
+console.log("append", results1Append.preciseWords);
+
+console.log('Results for the smallArray');
+console.log("insert", results2Insert.preciseWords);
+console.log("append", results2Append.preciseWords);
+
+console.log('Results for the mediumArray');
+console.log("insert", results3Insert.preciseWords);
+console.log("append", results3Append.preciseWords);
+
+console.log('Results for the largeArray');
+console.log("insert", results4Insert.preciseWords);
+console.log("append", results4Append.preciseWords);
 
 console.log('Results for the extraLargeArray');
 console.log("insert", resultsInsert.preciseWords);
